@@ -1,0 +1,1 @@
+We are hiring a Data Scientist to join our analytics team. Candidates should have experience in Python, SQL, machine learning, and data visualization. Preferred: knowledge of cloud platforms like AWS or GCP. Minimum 2 years of experience required.

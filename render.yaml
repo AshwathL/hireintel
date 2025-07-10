@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: hireintel
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    plan: free
+    envVars:
+      - key: OPENROUTER_API_KEY
+        value: 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

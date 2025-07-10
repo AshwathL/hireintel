@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HireIntel Upload</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}" type="image/png">
+</head>
+
+<body class="dark-mode">
+    <div class="sidebar collapsed">
+        <div class="tooltip">
+            <span class="tooltiptext">Open Sidebar</span>
+            <button id="sidebar-toggle">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        <div class="sidebar-content">
+            <div class="conversation-list">
+                <div class="conversation">
+                    <p class="conversation-text">Last Conversation:</p>
+                    <p class="conversation-content">No conversation yet</p>
+                </div>
+            </div>
+            <button id="new-conversation-btn">Start New Conversation</button>
+        </div>
+    </div>
+
+    <div class="chat-container light-mode">
+        <div class="chat-content">
+            <div class="chat-header">
+                <div class="logo-container">
+                    <h1></h1>
+                </div>
+                <div class="mode-toggle">
+                    <label class="switch">
+                        <input type="checkbox" id="mode-toggle-checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Upload Form Section -->
+            <div class="chat-box" id="chat-box">
+
+                <img src="{{ url_for('static', filename='logo.png') }}" style="width: 160px; margin-bottom: 20px;">
+
+                <form action="/process" method="POST" enctype="multipart/form-data" style="width: 100%; max-width: 700px;">
+                    <h1 style="text-align: center; font-family: 'Trebuchet MS', sans-serif; font-size: 24px; margin-bottom: 20px;">
+                        HireIntel
+                    </h1>
+                    <h2 style="text-align: center; font-family: 'Trebuchet MS', sans-serif; font-size: 18px; margin-bottom: 20px;">
+                        Smart Hiring Starts Here
+                    </h2>
+
+                    <h3 style="text-align: left; font-family: 'Trebuchet MS', sans-serif;  margin-bottom: 10px;">
+                        How HireIntel can help you...
+                    </h3>
+
+                    <ul style="font-size: 13px;">
+                        <li>Upload multiple resumes in PDF format</li>
+                        <li>Analyze job descriptions using AI</li>
+                        <li>Rank candidates based on job fit</li>
+                        <li>Ask questions to our smart hiring agent</li>
+                    </ul>
+            
+                    <h2 style="font-size: 18px; margin-bottom: 15px;">Upload Resumes and Enter Job Description</h2>
+            
+                    <label for="resumes">Upload Resumes (PDF only):</label><br>
+                    <br>
+                    <input type="file" name="resumes" id="resumes" multiple accept="application/pdf"
+                           style="width: 100%; margin-bottom: 20px;"><br>
+            
+                    <label for="job_description">Job Description:</label><br>
+                    <textarea name="job_description" id="job_description" rows="8"
+                              style="width: 100%; resize: vertical; margin-bottom: 20px;"></textarea><br>
+            
+                    <button type="submit" style="padding: 10px 20px; font-weight: bold;">
+                        Proceed to Chat
+                    </button>
+                </form>
+            </div>
+            
+            
+
+            <!-- Chat Input Section -->
+            
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
